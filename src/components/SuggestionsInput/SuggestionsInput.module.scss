@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+.SuggestionInputContainer {
+  position: relative;
+}
+
+.Input {
+  display: block;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba($color: $black, $alpha: 0.1);
+  width: 100%;
+  font-size: 20px;
+  border: 2px solid $clouds;
+  border-radius: 10px;
+
+  outline: none;
+  color: $black;
+
+  &:focus {
+    box-shadow: 0 0 10px rgba($color: $black, $alpha: 0.2);
+  }
+}
+
+.Suggestions {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  width: 100%;
+  padding: 10px 0;
+}
+
+.Suggestion {
+  border-radius: 10px;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 1px solid $clouds;
+  color: $black;
+  box-shadow: 0 0 5px rgba($color: $black, $alpha: 0.2);
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $clouds;
+  }
+}
