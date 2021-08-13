@@ -1,0 +1,19 @@
+@import 'variables.scss';
+
+.Button {
+  padding: 10px 20px;
+  min-width: 120px;
+  background: $lightBlue;
+  color: $clouds;
+  font-size: 18px;
+  border-radius: 10px;
+
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $darkBlue;
+  }
+}

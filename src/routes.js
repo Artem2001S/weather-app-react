@@ -12,4 +12,9 @@ export const routes = [
     exact: true,
     component: About,
   },
+  {
+    path: '/weather',
+    exact: true,
+    component: About,
+  },
 ];

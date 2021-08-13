@@ -1,14 +1,20 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { requestAddressSuggestion } from 'api/dadata';
+import { convertSuggestions } from 'utils/helpers';
 import Container from 'components/Container';
 import SuggestionsInput from 'components/SuggestionsInput';
-import { requestAddressSuggestion } from 'api/dadata';
+import Button from 'components/Button';
+import Message from 'components/Message';
 
 import styles from './Home.module.scss';
-import { convertSuggestions } from 'utils/helpers';
 
 const Home = () => {
+  const history = useHistory();
   const [cityInput, setCityInput] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+  const [message, setMessage] = useState('');
+
   const [selectedSuggestion, setSelectedSuggestion] = useState(null);
 
   const handleCityInputChange = useCallback(
@@ -35,16 +41,36 @@ const Home = () => {
     !selectedSuggestion && getSuggestions();
   }, [cityInput, selectedSuggestion]);
 
+  const handleCheckWeatherBtnClick = useCallback(
+    () =>
+      selectedSuggestion
+        ? history.push(
+            `/weather?lat=${selectedSuggestion.lat}&lon=${selectedSuggestion.lon}`
+          )
+        : setMessage('Choose city from drop down'),
+    [history, selectedSuggestion]
+  );
+
   return (
-    <Container>
-      <SuggestionsInput
-        className={styles.Input}
-        placeholder="City"
-        value={cityInput}
-        onChange={handleCityInputChange}
-        suggestions={suggestions}
-        onSuggestionClick={handleSuggestionClick}
-      />
+    <Container className={styles.HomeContainer}>
+      {message && <Message>{message}</Message>}
+      <div className={styles.Form}>
+        <SuggestionsInput
+          className={styles.Input}
+          placeholder="City"
+          value={cityInput}
+          onChange={handleCityInputChange}
+          suggestions={suggestions}
+          onSuggestionClick={handleSuggestionClick}
+        />
+        <Button
+          className={styles.Button}
+          type="button"
+          onClick={handleCheckWeatherBtnClick}
+        >
+          Check weather
+        </Button>
+      </div>
     </Container>
   );
 };

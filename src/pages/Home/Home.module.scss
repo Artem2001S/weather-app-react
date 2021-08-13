@@ -1,3 +1,20 @@
+.HomeContainer {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Button {
+  align-self: center;
+}
+
 .Input {
-  margin-top: 50px;
+  flex: 1;
+}
+
+.Form {
+  display: flex;
+  gap: 40px;
 }

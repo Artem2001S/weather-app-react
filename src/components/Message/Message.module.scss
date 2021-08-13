@@ -1,0 +1,10 @@
+@import 'variables.scss';
+
+.Message {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: $lightBlue;
+  border-radius: 10px;
+  color: $clouds;
+  font-size: 19px;
+}
