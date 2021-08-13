@@ -21,9 +21,9 @@ const SuggestionsInput = ({
         onChange={onChange}
       />
       <div className={styles.Suggestions}>
-        {suggestions.map((suggestion) => (
+        {suggestions.map((suggestion, index) => (
           <div
-            key={suggestion.value}
+            key={index}
             className={styles.Suggestion}
             onClick={() => onSuggestionClick(suggestion.value)}
           >
