@@ -9,20 +9,20 @@ import { convertSuggestions } from 'utils/helpers';
 const Home = () => {
   const [cityInput, setCityInput] = useState('');
   const [suggestions, setSuggestions] = useState([]);
-  const [isSuggestionSelected, setIsSuggestionSelected] = useState(false);
+  const [selectedSuggestion, setSelectedSuggestion] = useState(null);
 
   const handleCityInputChange = useCallback(
     (e) => {
       setCityInput(e.currentTarget.value);
-      isSuggestionSelected && setIsSuggestionSelected(false);
+      selectedSuggestion && setSelectedSuggestion(null);
     },
-    [isSuggestionSelected]
+    [selectedSuggestion]
   );
 
-  const handleSuggestionClick = useCallback((value) => {
-    setCityInput(value);
+  const handleSuggestionClick = useCallback((suggestion) => {
+    setCityInput(suggestion.value);
     setSuggestions([]);
-    setIsSuggestionSelected(true);
+    setSelectedSuggestion(suggestion);
   }, []);
 
   useEffect(() => {
@@ -32,8 +32,8 @@ const Home = () => {
       setSuggestions(convertedSuggestions);
     };
 
-    !isSuggestionSelected && getSuggestions();
-  }, [cityInput, isSuggestionSelected]);
+    !selectedSuggestion && getSuggestions();
+  }, [cityInput, selectedSuggestion]);
 
   return (
     <Container>

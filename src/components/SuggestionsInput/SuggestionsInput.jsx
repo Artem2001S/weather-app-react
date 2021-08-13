@@ -25,7 +25,7 @@ const SuggestionsInput = ({
           <div
             key={index}
             className={styles.Suggestion}
-            onClick={() => onSuggestionClick(suggestion.value)}
+            onClick={() => onSuggestionClick(suggestion)}
           >
             {suggestion.value}
           </div>
