@@ -1,0 +1,30 @@
+@import 'variables.scss';
+
+.Navbar {
+  display: flex;
+  align-items: center;
+
+  background-color: $clouds;
+  gap: 30px;
+  padding: 15px 20px;
+}
+
+.NavList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.NavLink {
+  display: block;
+  text-decoration: none;
+  color: $black;
+  font-size: 17px;
+
+  transition: transform 0.1s;
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
