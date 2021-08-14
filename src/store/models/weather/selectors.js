@@ -14,3 +14,28 @@ export const dataSelector = createSelector(
   weatherSelector,
   (state) => state.data
 );
+
+export const locationSelector = createSelector(
+  dataSelector,
+  (data) => data.location
+);
+
+export const localTimeSelector = createSelector(
+  locationSelector,
+  (location) => location.localtime
+);
+
+export const timezoneSelector = createSelector(
+  locationSelector,
+  (location) => location.tz_id
+);
+
+export const currentForecastSelector = createSelector(
+  dataSelector,
+  (data) => data.current
+);
+
+export const errorSelector = createSelector(
+  weatherSelector,
+  (state) => state.error
+);

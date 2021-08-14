@@ -4,7 +4,11 @@ const name = 'weather';
 const initialState = {
   isPending: false,
   error: '',
-  data: {},
+  data: {
+    location: {},
+    current: {},
+    forecast: {},
+  },
 };
 
 const weatherSlice = createSlice({
