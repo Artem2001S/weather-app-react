@@ -17,6 +17,7 @@ const weatherSlice = createSlice({
 
     fetchWeatherSuccess(state, { payload }) {
       state.isPending = false;
+      state.data = payload.data;
     },
 
     fetchWeatherError(state, { payload }) {

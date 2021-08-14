@@ -1,9 +1,22 @@
-import { takeLatest } from '@redux-saga/core/effects';
-import { fetchWeather } from './weatherSlice';
+import { takeLatest, call, put } from '@redux-saga/core/effects';
+import { currentForecastRequest } from 'api/weather';
+import {
+  fetchWeather,
+  fetchWeatherError,
+  fetchWeatherSuccess,
+} from './weatherSlice';
 
 function* fetchWeatherWorker({ payload }) {
-  console.log(payload);
-  yield;
+  try {
+    const { data } = yield call(
+      currentForecastRequest,
+      payload.lat,
+      payload.lon
+    );
+    yield put(fetchWeatherSuccess({ data }));
+  } catch (error) {
+    yield put(fetchWeatherError({ error: error.message }));
+  }
 }
 
 export default function* watchWeather() {
