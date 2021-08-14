@@ -45,7 +45,7 @@ const Home = () => {
     () =>
       selectedSuggestion
         ? history.push(
-            `/weather?lat=${selectedSuggestion.lat}&lon=${selectedSuggestion.lon}`
+            `/weather/${selectedSuggestion.lat}/${selectedSuggestion.lon}`
           )
         : setMessage('Choose city from drop down'),
     [history, selectedSuggestion]

@@ -1,5 +1,6 @@
 import About from 'pages/About';
 import Home from 'pages/Home';
+import Weather from 'pages/Weather';
 
 export const routes = [
   {
@@ -13,8 +14,8 @@ export const routes = [
     component: About,
   },
   {
-    path: '/weather',
+    path: '/weather/:lat/:lon',
     exact: true,
-    component: About,
+    component: Weather,
   },
 ];
