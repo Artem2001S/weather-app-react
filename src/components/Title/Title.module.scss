@@ -1,0 +1,18 @@
+@import 'variables.scss';
+
+.Title {
+  font-size: 45px;
+  color: $black;
+
+  &.medium {
+    font-size: 32px;
+  }
+
+  &.small {
+    font-size: 26px;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+}
