@@ -20,6 +20,11 @@ export const locationSelector = createSelector(
   (data) => data.location
 );
 
+export const regionSelector = createSelector(
+  locationSelector,
+  (location) => location.region
+);
+
 export const localTimeSelector = createSelector(
   locationSelector,
   (location) => location.localtime

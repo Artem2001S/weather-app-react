@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 import styles from './Title.module.scss';
 
-const Title = ({ centered, children, className, large, small }) => {
+const Title = ({ centered, children, medium, className, large, small }) => {
   return (
     <div
       className={classNames(
         { [styles.centered]: centered },
+        { [styles.medium]: medium },
         { [styles.large]: large },
         { [styles.small]: small },
         className,
@@ -26,6 +27,7 @@ Title.propTypes = {
   className: PropTypes.string,
   large: PropTypes.bool,
   small: PropTypes.bool,
+  medium: PropTypes.bool,
 };
 
 export default React.memo(Title);
