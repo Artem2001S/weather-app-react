@@ -7,6 +7,7 @@ import CurrentLocation from './CurrentLocation';
 import Container from 'components/Container';
 import Title from 'components/Title';
 import Button from 'components/Button';
+import Forecast from './Forecast';
 
 import styles from './Weather.module.scss';
 
@@ -24,6 +25,7 @@ const Weather = () => {
       <Button to="/">Check for another place</Button>
       <CurrentLocation />
       <CurrentForecast />
+      <Forecast />
     </Container>
   );
 };

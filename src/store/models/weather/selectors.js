@@ -54,3 +54,13 @@ export const errorSelector = createSelector(
   weatherSelector,
   (state) => state.error
 );
+
+export const forecastSelector = createSelector(
+  dataSelector,
+  (state) => state.forecast
+);
+
+export const forecastArraySelector = createSelector(
+  forecastSelector,
+  (forecast) => forecast.forecastday
+);

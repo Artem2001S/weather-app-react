@@ -1,0 +1,54 @@
+@import 'variables.scss';
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 15px 20px;
+  background-color: $lightBlue;
+  color: $clouds;
+  border-radius: 10px;
+}
+
+.Date {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: $lightRed;
+  border-radius: 10px;
+  align-self: flex-end;
+}
+
+.Top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.IconBackground {
+  background-color: $clouds;
+  padding: 10px;
+  border-radius: 50%;
+
+  transition: box-shadow 0.3s ease-out;
+
+  &:hover {
+    box-shadow: inset 0 0 10px rgba($color: $black, $alpha: 0.3);
+  }
+}
+
+.Status {
+  margin-top: 10px;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  border-radius: 10px;
+  margin-top: 15px;
+  background-color: $clouds;
+  padding: 15px 10px;
+  color: $black;
+}
