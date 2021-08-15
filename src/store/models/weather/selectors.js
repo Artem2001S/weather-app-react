@@ -25,6 +25,16 @@ export const regionSelector = createSelector(
   (location) => location.region
 );
 
+export const countrySelector = createSelector(
+  locationSelector,
+  (location) => location.country
+);
+
+export const locationNameSelector = createSelector(
+  locationSelector,
+  (location) => location.name
+);
+
 export const localTimeSelector = createSelector(
   locationSelector,
   (location) => location.localtime

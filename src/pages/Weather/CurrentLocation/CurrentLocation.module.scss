@@ -1,0 +1,20 @@
+@import 'variables.scss';
+
+.Container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba($color: $black, $alpha: 0.3);
+}
+
+.time {
+  align-self: flex-start;
+  border-radius: 10px;
+  background-color: $lightBlue;
+  color: $clouds;
+  padding: 5px 10px;
+}

@@ -6,7 +6,6 @@ import styles from './CurrentForecast.module.scss';
 
 const CurrentForecast = ({
   pending,
-  region,
   temperature,
   humidity,
   precipitation,
@@ -20,9 +19,6 @@ const CurrentForecast = ({
         'Loading...'
       ) : (
         <div className={styles.Container}>
-          <Title medium>
-            <b>{region}</b>
-          </Title>
           <img src={statusIcon} alt="Weather" />
           <Title small>
             {status}, {temperature} °C
@@ -44,7 +40,6 @@ const CurrentForecast = ({
 
 CurrentForecast.propTypes = {
   pending: PropTypes.bool,
-  region: PropTypes.string,
   temperature: PropTypes.number,
   humidity: PropTypes.number,
   precipitation: PropTypes.number,
@@ -55,7 +50,6 @@ CurrentForecast.propTypes = {
 
 CurrentForecast.defaultProps = {
   pending: false,
-  region: '',
   temperature: 0,
   humidity: 0,
   precipitation: 0,
